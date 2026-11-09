@@ -1,0 +1,30 @@
+
+#数据库连接
+spring:
+  application:
+    name: tlias-web-magement #这里是给项目起名字
+  datasource:
+    url: jdbc:mysql://localhost:3306/tlias
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1234
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+  #配置mybatis的日志输出
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+    #配置事务管理日志级别
+logging:
+      level:
+        org.springframework.jdbc.support.JdbcTransactionManager: debug
+
+#阿里云OSS
+aliyun:
+  oss:
+    endpoint: https://oss-cn-beijing.aliyuncs.com
+    bucketName: java-web-ai-2006
+    region : cn-beijing
